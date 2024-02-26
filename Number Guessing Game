@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout<<"Enter the guess number (1 to 10):"<<endl<<endl;
+    int answer = 5;
+    int guess;
+    int health = 0;
+    int chances = 3;
+    bool gameover = false;
+    
+    while(answer != guess && !gameover )
+    {
+        if(health<chances)
+        {
+            cout<<"Enter your Number : ";
+            cin>>guess;
+            if(guess<answer)
+            {
+                cout<<"Guess is too low "<<endl;;
+            }
+                else if(guess>answer)
+                {
+                    cout<<"Guess is too high "<<endl;
+                }
+                else
+                {
+                     cout<<"Congratulations! You guessed the correct number"<<endl;
+                }
+            
+            health++;
+        }
+        else
+        {
+            gameover = true;
+        }
+    }
+    if(gameover)
+    {
+        cout<<    "YOU LOST   "<<endl;
+    }
+    else
+    {
+        cout<<"YOU WIN !"<<endl;
+    }
+    
+    return 0;
+}
